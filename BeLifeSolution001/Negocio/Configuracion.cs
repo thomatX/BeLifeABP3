@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
@@ -339,15 +340,38 @@ namespace Negocio
         }
 
 
-        public static bool ValidarPatente(string value) {
+        public static bool ValidarPatente(string value)
+        {
             bool validated = false;
 
-            if (!value.Equals(String.Empty) && !value.Equals(null) && !value.Equals("")) 
+            if (!value.Equals(String.Empty) && !value.Equals(null) && !value.Equals(""))
                 validated = true;
-            
+
+            // AAAA99
+            string regex1 = "^[A-Z]{4}[0-9]{2}$";
+
+            // AAA999
+            string regex2 = "^[A-Z]{3}[0-9]{3}$";
+
+            // AA9999
+            string regex3 = "^[A-Z]{2}[0-9]{4}$";
+
+            if (
+                Regex.Match(value, regex1).Success ||
+                Regex.Match(value, regex2).Success ||
+                Regex.Match(value, regex3).Success
+                )
+            {
+                // Patente Válida :D
+                validated = true;
+            }
+            else
+            {
+                // Patente no valida
+                validated = false;
+            }
 
             return validated;
-
         }
 
 
