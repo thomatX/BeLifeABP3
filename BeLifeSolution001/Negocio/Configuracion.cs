@@ -33,7 +33,8 @@ namespace Negocio
         /// <param name="value"></param>
         /// Value: Nuevo rut cliente.
         /// <returns></returns>
-        public static bool ValidarRut(string value) {
+        public static bool ValidarRut(string value)
+        {
             bool validated = false;
             if (!value.Equals(String.Empty) && value.Length < MAXRUT) {
                 validated = true;

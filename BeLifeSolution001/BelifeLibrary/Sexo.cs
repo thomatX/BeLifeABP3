@@ -51,5 +51,47 @@ namespace BelifeLibrary
             _id = 0;
             _descripcion = String.Empty;
         }
+
+
+        /// <summary>
+        /// Buscamos todos los Sexos de la base de datos y los convertimos a entidades
+        /// </summary>
+        /// <returns></returns>
+        public List<Sexo> ReadAll()
+        {
+            /*Creamos una lista de Sexos del contexto*/
+            List<BeLifeDatos.Sexo> listaDatos = bbdd.Sexo.ToList<BeLifeDatos.Sexo>();
+
+            /*Los convertimos a Sexos legibles*/
+            List<Sexo> list = SyncList(listaDatos);
+
+            /*Devolvemos la lista*/
+            return list;
+        }
+
+
+        /// <summary>
+        /// Metodo para convertir una lista de contexto a lista legible por las librerias.
+        /// </summary>
+        /// <param name="listaDatos"></param>
+        /// <returns></returns>
+        private static List<Sexo> SyncList(List<BeLifeDatos.Sexo> listaDatos)
+        {
+            /*Creamos una lista de Sexos*/
+            List<Sexo> list = new List<Sexo>();
+
+            /*Por cada elemento de la lista de Sexos del contexto realizamos una sincronización y los agregamos a la lista de Sexos*/
+            foreach (var x in listaDatos)
+            {
+                Sexo Sexo = new Sexo();
+                CommonBC.Syncronize(x, Sexo);
+                list.Add(Sexo);
+
+            }
+
+            return list;
+        }
+
+
     }
 }

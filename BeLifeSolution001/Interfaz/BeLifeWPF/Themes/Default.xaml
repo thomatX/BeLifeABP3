@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Color para el fondo principal-->
+    <SolidColorBrush x:Key="GridFondo" Color="LightGray"/>
+    
+    <!--Color Grid Info Menu Principal-->
+    <SolidColorBrush x:Key="GridInfoMenu" Color="White"/>
+
+    <!--Color Menu Lateral-->
+    <SolidColorBrush x:Key="ColorSideMenu" Color="#FF393939"/>
+    <SolidColorBrush x:Key="ColorSideButton" Color="White"/>
+
+    <!--Color de label de gris a lima-->
+    <SolidColorBrush x:Key="ColorForegroundLabel" Color="#FF393939"/>
+    
+    <!--Color label de blanco a lima-->
+    <SolidColorBrush x:Key="ColorForegroundLabel2" Color="White"/>
+
+    <!--Color de los bordes de los controles-->
+    <SolidColorBrush x:Key="ColorBorderControl" Color="Gray"/>
+    <SolidColorBrush x:Key="ColorForegroundControl" Color="Black"/>
+
+    <!--Color barra superior-->
+    <SolidColorBrush x:Key="ColorSuperiorBar" Color="White"/>
+
+    <!--Color de los botones y tiles-->
+    <SolidColorBrush x:Key="ColorBackgroundButton" Color="#FF393939"/>
+    <SolidColorBrush x:Key="ColorBorderTile" Color="#FF393939"/>
+
+    <!--Color de los background de los controles-->
+    <SolidColorBrush x:Key="ColorBackgroundControls" Color="White"/>
+
+
+    <!--Color de los FlyOut-->
+    <SolidColorBrush x:Key="ColorFlyoutBackground" Color="#FF9E6DA1"/>
+    <SolidColorBrush x:Key="ColorFlyoutBorderBrush" Color="#FF9E6DA1"/>
+
+
+</ResourceDictionary>
